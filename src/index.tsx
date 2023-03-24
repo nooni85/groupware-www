@@ -6,6 +6,7 @@ import routes from './routes';
 import LocaleWrapper from "./wrapper/LocaleWrapper";
 
 import './index.css';
+import AuthProvider from "./components/auth/AuthProvider";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,9 +14,11 @@ const root = ReactDOM.createRoot(
 
 root.render(
     <React.StrictMode>
-        <LocaleWrapper>
-            <RouterProvider router={routes} />
-        </LocaleWrapper>
+        <AuthProvider>
+            <LocaleWrapper>
+                <RouterProvider router={routes} />
+            </LocaleWrapper>
+        </AuthProvider>
     </React.StrictMode>
 );
 
