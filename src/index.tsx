@@ -2,16 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
-import router from './config/router';
+import { IntlProvider } from 'react-intl';
+import routes from './routes';
+import ko from './lang/ko.json';
 
 import './index.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <IntlProvider locale='ko' messages={ko}>
+      <RouterProvider router={routes} />
+    </IntlProvider>
   </React.StrictMode>
 );
 

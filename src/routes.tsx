@@ -1,11 +1,13 @@
+import React from 'react';
 import { createBrowserRouter } from "react-router-dom";
-import Home from '../pages/home';
-import Layout from '../layout/default';
+
+const Home = React.lazy(() => import('./pages/Home'));
+const Default = React.lazy(() => import('./layout/Default'));
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Layout />,
+        element: <Default />,
         children: [
             {
                 path: '/',
