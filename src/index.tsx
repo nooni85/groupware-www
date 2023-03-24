@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
-import { IntlProvider } from 'react-intl';
 import routes from './routes';
-import ko from './lang/ko.json';
+import LocaleWrapper from "./wrapper/LocaleWrapper";
 
 import './index.css';
 
@@ -13,11 +12,11 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <React.StrictMode>
-    <IntlProvider locale='ko' messages={ko}>
-      <RouterProvider router={routes} />
-    </IntlProvider>
-  </React.StrictMode>
+    <React.StrictMode>
+        <LocaleWrapper>
+            <RouterProvider router={routes} />
+        </LocaleWrapper>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

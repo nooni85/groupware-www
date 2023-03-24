@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 type TaskProps = {
     link: string;
     icon: IconProp;
+    name: string;
 }
 export default function Task(props: TaskProps): JSX.Element {
-    console.log(props);
     return (
-        <Link to={props.link} className='block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4'>
-            <FontAwesomeIcon icon={props.icon} />
+        <Link to={props.link} className='block text-gray-500 hover:text-white flex flex-col p-1'>
+            <FontAwesomeIcon icon={props.icon} className={'font-bold text-2xl'}/>
+            <p>{props.name}</p>
         </Link>
     )
 }
