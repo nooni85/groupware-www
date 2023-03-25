@@ -7,7 +7,7 @@ import {useAuth} from "../components/auth/AuthProvider";
 
 export default function Header() {
     const { formatMessage } = useIntl();
-    const { user, login } = useAuth();
+    const { user } = useAuth();
 
     return (
         <header>
